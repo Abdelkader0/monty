@@ -21,7 +21,7 @@
  */
 typedef struct stack_s
 {
-	int value;
+	int n;
 	struct stack_s *prev;
 	struct stack_s *next;
 } stack_t;
@@ -51,7 +51,7 @@ void push(stack_t **stack, unsigned int line_num, int value);
 void pall(stack_t **stack, unsigned int line_num);
 void execute(char *lines[], stack_t *stack);
 int nlfind(char *list);
-void free_list(char *lines[]);
+void free_list(char *list[]);
 int combfind(char *list, int line_num);
 int validate_combinations(char *str, int line_num);
 

@@ -22,11 +22,11 @@ void free_stack(stack_t *head)
 }
 
 /**
- * free_string_list - frees the list of strings
+ * free_list - frees the list of strings
  * @list: pointer to the array of strings
  * Return: Nothing
  */
-void free_string_list(char *list[])
+void free_list(char *list[])
 {
 	int i = 0;
 

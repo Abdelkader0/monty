@@ -14,7 +14,7 @@ void pall(stack_t **stack, unsigned int line_number)
 
 	while (current)
 	{
-		printf("%d\n", current->value);
+		printf("%d\n", current->n);
 		current = current->next;
 	}
 }
@@ -40,7 +40,7 @@ void push(stack_t **stack, unsigned int line_number, int value)
 	if (new_node == NULL)
 		exit(EXIT_FAILURE);
 	new_node->prev = NULL;
-	new_node->value = value;
+	new_node->n = value;
 	new_node->next = *stack;
 	if (*stack)
 		head->prev = new_node;

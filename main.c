@@ -1,5 +1,6 @@
-#include "monty.h"
 #include <stdio.h>
+#include <stdlib.h>
+#include "monty.h"
 
 /**
  * main - Monty interpreter
@@ -13,7 +14,7 @@ int main(int argc, char *argv[])
 	static char *lines[1000] = {NULL};
 	int line_count = 0;
 	FILE *file;
-	size_t bufsize = 1000;
+	char buffer[1000];
 
 	if (argc != 2)
 	{
@@ -28,12 +29,22 @@ int main(int argc, char *argv[])
 		exit(EXIT_FAILURE);
 	}
 
-	for (line_count = 0; getline(&(lines[line_count]), &bufsize, file) > 0; line_count++)
-		;
+	while (fgets(buffer, sizeof(buffer), file) != NULL)
+	{
+		lines[line_count] = malloc(strlen(buffer) + 1);
+		if (lines[line_count] == NULL)
+		{
+			fprintf(stderr, "Error: Memory allocation failed\n");
+			exit(EXIT_FAILURE);
+		}
+		strcpy(lines[line_count], buffer);
+		line_count++;
+	}
+
 	execute(lines, stack);
 	free_list(lines);
 	fclose(file);
-	return (0);
+	return 0;
 }
 
 /**
