@@ -1,5 +1,5 @@
-#ifndef _HOOLB_
-#define _HOOLB_
+#ifndef __HOOLB__
+#define __HOOLB__
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -53,5 +53,6 @@ void execute(char *lines[], stack_t *stack);
 int nlfind(char *list);
 void free_list(char *lines[]);
 int combfind(char *list, int line_num);
+int validate_combinations(char *str, int line_num);
 
 #endif
