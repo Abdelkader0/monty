@@ -1,5 +1,5 @@
-#ifndef _HOOLB_
-#define _HOOLB_
+#ifndef __HOOLB__
+#define __HOOLB__
 
 #include <stdio.h>
 #include <stdlib.h>
