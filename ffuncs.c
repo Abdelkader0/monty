@@ -18,7 +18,7 @@ exit(EXIT_FAILURE);
 if (*stack && (*stack)->next)
 {
 next_node = current->next;
-next_node->n += current->n;
+next_node->value += current->value;
 free(current);
 *stack = next_node;
 }
@@ -37,5 +37,5 @@ if (*stack == NULL)
 fprintf(stderr, "L%u: can't pint, stack empty\n", line_num);
 exit(EXIT_FAILURE);
 }
-printf("%d\n", (*stack)->n);
+printf("%d\n", (*stack)->value);
 }
