@@ -53,5 +53,6 @@ void execute(char *lines[], stack_t *stack);
 int nlfind(char *list);
 void free_list(char *lines[]);
 int combfind(char *list, int line_num);
+int validate_combinations(char *str, int line_num);
 
 #endif
